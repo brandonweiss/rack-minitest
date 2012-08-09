@@ -18,7 +18,7 @@ last_response.must_be_unauthorized
 last_response.must_be_not_found
 ```
 
-*NB*: This is a quick and dirty gem to hack in some functionality that I was surprised to find didn't already exist. There are tests, and they pass, but they're pretty gross. All improvements are welcome.
+**NB**: This is a quick and dirty gem to hack in some functionality that I was surprised to find didn't already exist. There are tests, and they pass, but they're pretty gross. All improvements are welcome.
 
 ## Installation
 
