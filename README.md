@@ -18,6 +18,8 @@ last_response.must_be_unauthorized
 last_response.must_be_not_found
 ```
 
+*NB*: This is a quick and dirty gem to hack in some functionality that I was surprised to find didn't already exist. There are tests, and they pass, but they're pretty gross. All improvements are welcome.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -30,7 +32,12 @@ And then execute:
 
 ## Usage
 
-TODO: Write usage instructions here
+Just add the appropriate requires _after_ you load `rack-test` and `MiniTest`.
+
+```
+require "rack-minitest/assertions"
+require "rack-minitest/spec"
+```
 
 ## Contributing
 

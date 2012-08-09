@@ -1,4 +1,4 @@
-class MiniTest::Spec < MiniTest::Unit::TestCase
+class MiniTest::Spec
 
   include Rack::Test::Methods
 
@@ -21,6 +21,8 @@ class MiniTest::Spec < MiniTest::Unit::TestCase
   def delete_json(path, params = {})
     json_request :delete, path, params
   end
+
+private
 
   def json_request(verb, path, params = {})
     send verb, path, params.to_json, "CONTENT_TYPE" => "application/json"
