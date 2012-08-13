@@ -34,4 +34,11 @@ describe MiniTest::Spec do
     last_response.must_be_not_found
   end
 
+ it "should have a spec-style matcher for an unprocessable entity response" do
+    def app; stub_app(422); end
+
+    get "/"
+    last_response.must_be_unprocessable_entity
+  end
+
 end

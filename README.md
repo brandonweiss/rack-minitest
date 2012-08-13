@@ -16,6 +16,7 @@ last_response.must_be_ok
 last_response.must_be_created
 last_response.must_be_unauthorized
 last_response.must_be_not_found
+last_response.must_be_unprocessable_entity
 ```
 
 **NB**: This is a quick and dirty gem to hack in some functionality that I was surprised to find didn't already exist. There are tests, and they pass, but they're pretty gross. All improvements are welcome.
