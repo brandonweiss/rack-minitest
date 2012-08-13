@@ -8,6 +8,10 @@ module MiniTest::Assertions
     assert_response_status response, 201
   end
 
+  def assert_moved_permanently(response)
+    assert_response_status response, 301
+  end
+
   def assert_unauthorized(response)
     assert_response_status response, 401
   end
@@ -28,6 +32,7 @@ end
 
 Rack::MockResponse.infect_an_assertion :assert_ok,                   :must_be_ok,                   :only_one_argument
 Rack::MockResponse.infect_an_assertion :assert_created,              :must_be_created,              :only_one_argument
+Rack::MockResponse.infect_an_assertion :assert_moved_permanently,    :must_be_moved_permanently,    :only_one_argument
 Rack::MockResponse.infect_an_assertion :assert_unauthorized,         :must_be_unauthorized,         :only_one_argument
 Rack::MockResponse.infect_an_assertion :assert_not_found,            :must_be_not_found,            :only_one_argument
 Rack::MockResponse.infect_an_assertion :assert_unprocessable_entity, :must_be_unprocessable_entity, :only_one_argument

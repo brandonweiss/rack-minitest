@@ -20,6 +20,13 @@ describe MiniTest::Spec do
     last_response.must_be_created
   end
 
+  it "should have a spec-style matcher for a moved permanently response" do
+    def app; stub_app(301); end
+
+    get "/"
+    last_response.must_be_moved_permanently
+  end
+
   it "should have a spec-style matcher for an unauthorized response" do
     def app; stub_app(401); end
 
