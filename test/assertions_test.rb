@@ -48,4 +48,11 @@ describe MiniTest::Spec do
     last_response.must_be_unprocessable_entity
   end
 
+ it "should have a spec-style matcher for an internal server error response" do
+    def app; stub_app(500); end
+
+    get "/"
+    last_response.must_be_internal_server_error
+  end
+
 end
