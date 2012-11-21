@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Rack::Minitest::VERSION
   gem.authors       = ["Brandon Weiss"]
   gem.email         = ["brandon@anti-pattern.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{rack-minitest = rack-test + MiniTest}
+  gem.summary       = %q{rack-minitest = rack-test + MiniTest}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
