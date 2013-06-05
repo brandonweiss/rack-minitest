@@ -20,6 +20,13 @@ describe MiniTest::Spec do
     last_response.must_be_created
   end
 
+  it "should have a spec-style matcher for a no content response" do
+    def app; stub_app(204); end
+
+    get "/"
+    last_response.must_be_no_content
+  end
+
   it "should have a spec-style matcher for a moved permanently response" do
     def app; stub_app(301); end
 

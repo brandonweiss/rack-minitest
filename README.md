@@ -14,9 +14,13 @@ delete_json path, params
 
 last_response.must_be_ok
 last_response.must_be_created
+last_response.must_be_no_content
+last_response.must_be_moved_permanently
+last_response.must_be_bad_request
 last_response.must_be_unauthorized
 last_response.must_be_not_found
 last_response.must_be_unprocessable_entity
+last_response.must_be_internal_server_error
 ```
 
 **NB**: This is a quick and dirty gem to hack in some functionality that I was surprised to find didn't already exist. There are tests, and they pass, but they're pretty gross. All improvements are welcome.
