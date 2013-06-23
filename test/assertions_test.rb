@@ -48,6 +48,13 @@ describe MiniTest::Spec do
     last_response.must_be_unauthorized
   end
 
+  it "should have a spec-style matcher for a forbidden response" do
+    def app; stub_app(403); end
+
+    get "/"
+    last_response.must_be_forbidden
+  end
+
   it "should have a spec-style matcher for a not found response" do
     def app; stub_app(404); end
 

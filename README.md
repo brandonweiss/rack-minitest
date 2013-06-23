@@ -18,6 +18,7 @@ last_response.must_be_no_content
 last_response.must_be_moved_permanently
 last_response.must_be_bad_request
 last_response.must_be_unauthorized
+last_response.must_be_forbidden
 last_response.must_be_not_found
 last_response.must_be_unprocessable_entity
 last_response.must_be_internal_server_error
