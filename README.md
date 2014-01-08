@@ -1,8 +1,8 @@
 # rack-minitest
 
-`rack-minitest` = `rack-test` + `MiniTest`. See what I did there?
+`rack-minitest` = `rack-test` + `Minitest`. See what I did there?
 
-This gem adds some convenience methods to `rack-test` and `MiniTest` that I found myself duplicating over and over for every application I wrote. It adds a few methods for dealing with JSON to `rack-test` and `MiniTest` spec-style matchers for checking response status. The specific methods are:
+This gem adds some convenience methods to `rack-test` and `Minitest` that I found myself duplicating over and over for every application I wrote. It adds a few methods for dealing with JSON to `rack-test` and `Minitest` spec-style matchers for checking response status. The specific methods are:
 
 ```
 last_json_response
@@ -26,6 +26,12 @@ last_response.must_be_internal_server_error
 
 **NB**: This is a quick and dirty gem to hack in some functionality that I was surprised to find didn't already exist. There are tests, and they pass, but they're pretty gross. All improvements are welcome.
 
+## Requirements
+
+* [json](https://github.com/flori/json)
+* [rack-test](https://github.com/brynary/rack-test)
+* [minitest](https://github.com/seattlerb/minitest) ~> 5.0
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -38,7 +44,7 @@ And then execute:
 
 ## Usage
 
-Just add the appropriate requires _after_ you load `rack-test` and `MiniTest`.
+Just add the appropriate requires _after_ you load `rack-test` and `Minitest`.
 
 ```
 require "rack-minitest/assertions"
