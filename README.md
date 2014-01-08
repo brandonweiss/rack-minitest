@@ -58,11 +58,31 @@ And then execute:
 
 ## Usage
 
-Just add the appropriate requires _after_ you load `rack-test` and `Minitest`.
+You can use `rack-minitest` in one of two ways.
 
-```
+### Require only the modules you need
+
+```ruby
+require "rack-minitest/json"
 require "rack-minitest/assertions"
-require "rack-minitest/spec"
+
+class MyTestClass < Minitest::Test
+  include Rack::Test::Methods
+  include Rack::Minitest::JSON
+  include Rack::Minitest::Assertions
+
+  # use rack/test, the json methods, and assertions
+end
+```
+
+### All in one
+
+```ruby
+require "rack-minitest/test"
+
+describe SomeTestClass do
+  # adds rack-test and all the rack-minitest modules
+end
 ```
 
 ## Contributing
