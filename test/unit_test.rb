@@ -1,4 +1,5 @@
 require File.expand_path("../test_helper", __FILE__)
+require "rack-minitest/unit"
 
 class TestRackMinitestUnit < Minitest::Test
 

@@ -1,6 +1,8 @@
 require File.expand_path("../test_helper", __FILE__)
 
-describe Minitest::Spec do
+describe Rack::Minitest::JSON do
+  include Rack::Test::Methods
+  include Rack::Minitest::JSON
 
   def app
     json = { "foo" => "bar" }.to_json

@@ -4,7 +4,9 @@ def stub_app(status_code)
   lambda { |env| [status_code, {}, [""]] }
 end
 
-describe Minitest::Spec do
+describe Rack::Minitest::Assertions do
+  include Rack::Test::Methods
+  include Rack::Minitest::Assertions
 
   it "should have an assertion for an ok response" do
     def app; stub_app(200); end
