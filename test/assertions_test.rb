@@ -4,7 +4,7 @@ def stub_app(status_code)
   lambda { |env| [status_code, {}, [""]] }
 end
 
-describe MiniTest::Spec do
+describe Minitest::Spec do
 
   it "should have a spec-style matcher for an ok response" do
     def app; stub_app(200); end

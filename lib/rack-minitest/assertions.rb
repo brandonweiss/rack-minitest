@@ -1,4 +1,4 @@
-module MiniTest::Assertions
+module Minitest::Assertions
 
   def assert_ok(response)
     assert_response_status response, 200
