@@ -7,4 +7,5 @@ require "minitest/autorun"
 
 require "json"
 require "rack-minitest/assertions"
+require "rack-minitest/expectations"
 require "rack-minitest/spec"
