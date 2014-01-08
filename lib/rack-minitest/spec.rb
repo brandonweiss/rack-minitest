@@ -1,3 +1,4 @@
+require "rack/test"
 require "rack-minitest/expectations"
 require "rack-minitest/json"
 
