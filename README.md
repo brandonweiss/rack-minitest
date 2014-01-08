@@ -2,9 +2,10 @@
 
 `rack-minitest` = `rack-test` + `Minitest`. See what I did there?
 
-This gem adds some convenience methods to `rack-test` and `Minitest` that I found myself duplicating over and over for every application I wrote. It adds a few methods for dealing with JSON to `rack-test` and `Minitest` spec-style matchers for checking response status. The specific methods are:
+This gem adds some convenience methods to `rack-test` and `Minitest` that I found myself duplicating over and over for every application I wrote. It adds a few methods for dealing with JSON to `rack-test`, `Minitest` assertions, and spec-style matchers for checking response status. The specific methods are:
 
-```
+```ruby
+# json
 last_json_response
 
 get_json    path, params
@@ -12,6 +13,19 @@ post_json   path, params
 put_json    path, params
 delete_json path, params
 
+# assertions
+assert_ok
+assert_created
+assert_no_content
+assert_moved_permanently
+assert_bad_request
+assert_unauthorized
+assert_forbidden
+assert_not_found
+assert_unprocessable_entity
+assert_internal_server_error
+
+# matchers
 last_response.must_be_ok
 last_response.must_be_created
 last_response.must_be_no_content
