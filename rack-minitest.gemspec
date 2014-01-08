@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Rack::Minitest::VERSION
   gem.authors       = ["Brandon Weiss"]
   gem.email         = ["brandon@anti-pattern.com"]
-  gem.description   = %q{rack-minitest = rack-test + MiniTest}
-  gem.summary       = %q{rack-minitest = rack-test + MiniTest}
+  gem.description   = %q{rack-minitest = rack-test + Minitest}
+  gem.summary       = %q{rack-minitest = rack-test + Minitest}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
@@ -19,7 +19,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "json"
   gem.add_dependency "rack-test"
-  gem.add_dependency "minitest"
+  gem.add_dependency "minitest", "~> 5.0"
 
   gem.add_development_dependency "rake"
 end
