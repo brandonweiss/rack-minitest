@@ -1,7 +1,11 @@
 require "rack-minitest/assertions"
 
-module Rack::Minitest::Expectations
-  include Rack::Minitest::Assertions
+module Rack
+  module Minitest
+    module Expectations
+      include Rack::Minitest::Assertions
+    end
+  end
 end
 
 class Rack::MockResponse
