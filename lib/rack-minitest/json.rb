@@ -4,7 +4,7 @@ module Rack
   module Minitest
     module JSON
       def last_json_response
-        JSON.parse(last_response.body)
+        ::JSON.parse(last_response.body)
       end
 
       def get_json(path, params = {})
