@@ -6,5 +6,6 @@ require "rack/test"
 require "minitest/autorun"
 
 require "json"
+require "rack-minitest/json"
 require "rack-minitest/assertions"
-require "rack-minitest/spec"
+require "rack-minitest/expectations"

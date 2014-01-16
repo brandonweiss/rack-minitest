@@ -1,15 +1,16 @@
 require File.expand_path("../test_helper", __FILE__)
-require "minitest/test"
 
-describe Minitest::Spec do
+describe Rack::Minitest::JSON do
+  include Rack::Test::Methods
+  include Rack::Minitest::JSON
 
   def app
     json = { "foo" => "bar" }.to_json
     lambda { |env| [200, { "Content-Type" => "text/html" }, [json]] }
   end
 
-  it "should include Rack::Test::Methods" do
-    assert Minitest::Spec.include? Rack::Test::Methods
+  it "should include Rack::Minitest::JSON" do
+    assert Minitest::Spec.include? Rack::Minitest::JSON
   end
 
   it "should parse JSON responses" do

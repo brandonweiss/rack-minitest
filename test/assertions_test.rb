@@ -4,76 +4,78 @@ def stub_app(status_code)
   lambda { |env| [status_code, {}, [""]] }
 end
 
-describe Minitest::Spec do
+describe Rack::Minitest::Assertions do
+  include Rack::Test::Methods
+  include Rack::Minitest::Assertions
 
-  it "should have a spec-style matcher for an ok response" do
+  it "should have an assertion for an ok response" do
     def app; stub_app(200); end
 
     get "/"
-    last_response.must_be_ok
+    assert_ok(last_response)
   end
 
-  it "should have a spec-style matcher for a created response" do
+  it "should have an assertion for a created response" do
     def app; stub_app(201); end
 
     get "/"
-    last_response.must_be_created
+    assert_created(last_response)
   end
 
-  it "should have a spec-style matcher for a no content response" do
+  it "should have an assertion for a no content response" do
     def app; stub_app(204); end
 
     get "/"
-    last_response.must_be_no_content
+    assert_no_content(last_response)
   end
 
-  it "should have a spec-style matcher for a moved permanently response" do
+  it "should have an assertion for a moved permanently response" do
     def app; stub_app(301); end
 
     get "/"
-    last_response.must_be_moved_permanently
+    assert_moved_permanently(last_response)
   end
 
-  it "should have a spec-style matcher for a bad request response" do
+  it "should have an assertion for a bad request response" do
     def app; stub_app(400); end
 
     get "/"
-    last_response.must_be_bad_request
+    assert_bad_request(last_response)
   end
 
-  it "should have a spec-style matcher for an unauthorized response" do
+  it "should have an assertion for an unauthorized response" do
     def app; stub_app(401); end
 
     get "/"
-    last_response.must_be_unauthorized
+    assert_unauthorized(last_response)
   end
 
-  it "should have a spec-style matcher for a forbidden response" do
+  it "should have an assertion for a forbidden response" do
     def app; stub_app(403); end
 
     get "/"
-    last_response.must_be_forbidden
+    assert_forbidden(last_response)
   end
 
-  it "should have a spec-style matcher for a not found response" do
+  it "should have an assertion for a not found response" do
     def app; stub_app(404); end
 
     get "/"
-    last_response.must_be_not_found
+    assert_not_found(last_response)
   end
 
- it "should have a spec-style matcher for an unprocessable entity response" do
+ it "should have an assertion for an unprocessable entity response" do
     def app; stub_app(422); end
 
     get "/"
-    last_response.must_be_unprocessable_entity
+    assert_unprocessable_entity(last_response)
   end
 
- it "should have a spec-style matcher for an internal server error response" do
+ it "should have an assertion for an internal server error response" do
     def app; stub_app(500); end
 
     get "/"
-    last_response.must_be_internal_server_error
+    assert_internal_server_error(last_response)
   end
 
 end
