@@ -38,4 +38,23 @@ describe Rack::Minitest::JSON do
     assert_equal "application/json", last_request.env["CONTENT_TYPE"]
   end
 
+  it "should set custom headers on get" do
+    get_json "/", {}, { "HTTP_AUTHORIZATION" => "Token token=1111" }
+    assert_equal "Token token=1111", last_request.env["HTTP_AUTHORIZATION"]
+  end
+
+  it "should set custom headers on post" do
+    post_json "/", {}, { "HTTP_AUTHORIZATION" => "Token token=1111" }
+    assert_equal "Token token=1111", last_request.env["HTTP_AUTHORIZATION"]
+  end
+
+  it "should set custom headers on put" do
+    put_json "/", {}, { "HTTP_AUTHORIZATION" => "Token token=1111" }
+    assert_equal "Token token=1111", last_request.env["HTTP_AUTHORIZATION"]
+  end
+
+  it "should set custom headers on delete" do
+    delete_json "/", {}, { "HTTP_AUTHORIZATION" => "Token token=1111" }
+    assert_equal "Token token=1111", last_request.env["HTTP_AUTHORIZATION"]
+  end
 end

@@ -8,10 +8,10 @@ This gem adds some convenience methods to `rack-test` and `Minitest` that I foun
 # json
 last_json_response
 
-get_json    path, params
-post_json   path, params
-put_json    path, params
-delete_json path, params
+get_json    path, params, headers
+post_json   path, params, headers
+put_json    path, params, headers
+delete_json path, params, headers
 
 # assertions
 assert_ok
