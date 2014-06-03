@@ -7,26 +7,26 @@ module Rack
         ::JSON.parse(last_response.body)
       end
 
-      def get_json(path, params = {})
-        json_request :get, path, params
+      def get_json(path, params = {}, headers = {})
+        json_request :get, path, params, headers
       end
 
-      def post_json(path, params = {})
-        json_request :post, path, params
+      def post_json(path, params = {}, headers = {})
+        json_request :post, path, params, headers
       end
 
-      def put_json(path, params = {})
-        json_request :put, path, params
+      def put_json(path, params = {}, headers = {})
+        json_request :put, path, params, headers
       end
 
-      def delete_json(path, params = {})
-        json_request :delete, path, params
+      def delete_json(path, params = {}, headers = {})
+        json_request :delete, path, params, headers
       end
 
       private
 
-      def json_request(verb, path, params = {})
-        send verb, path, params.to_json, "CONTENT_TYPE" => "application/json"
+      def json_request(verb, path, params = {}, headers = {})
+        send verb, path, params.to_json, headers.merge({ "CONTENT_TYPE" => "application/json" })
       end
     end
   end
