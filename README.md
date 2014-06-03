@@ -38,8 +38,6 @@ last_response.must_be_unprocessable_entity
 last_response.must_be_internal_server_error
 ```
 
-**NB**: This is a quick and dirty gem to hack in some functionality that I was surprised to find didn't already exist. There are tests, and they pass, but they're pretty gross. All improvements are welcome.
-
 ## Requirements
 
 * [json](https://github.com/flori/json)
