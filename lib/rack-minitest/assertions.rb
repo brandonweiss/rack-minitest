@@ -10,6 +10,10 @@ module Rack
         assert_response_status response, 201
       end
 
+      def assert_accepted(response)
+        assert_response_status response, 202
+      end
+
       def assert_no_content(response)
         assert_response_status response, 204
       end

@@ -22,6 +22,13 @@ describe Rack::Minitest::Expectations do
     last_response.must_be_created
   end
 
+  it "should have a spec-style matcher for an accepted response" do
+    def app; stub_app(202); end
+
+    get "/"
+    last_response.must_be_accepted
+  end
+
   it "should have a spec-style matcher for a no content response" do
     def app; stub_app(204); end
 

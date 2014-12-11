@@ -22,6 +22,13 @@ describe Rack::Minitest::Assertions do
     assert_created(last_response)
   end
 
+  it "should have an assertion for an accepted response" do
+    def app; stub_app(202); end
+
+    get "/"
+    assert_accepted(last_response)
+  end
+
   it "should have an assertion for a no content response" do
     def app; stub_app(204); end
 

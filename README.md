@@ -16,6 +16,7 @@ delete_json path, params, headers
 # assertions
 assert_ok
 assert_created
+assert_accepted
 assert_no_content
 assert_moved_permanently
 assert_bad_request
@@ -28,6 +29,7 @@ assert_internal_server_error
 # matchers
 last_response.must_be_ok
 last_response.must_be_created
+last_response.must_be_accepted
 last_response.must_be_no_content
 last_response.must_be_moved_permanently
 last_response.must_be_bad_request
